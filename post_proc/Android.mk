@@ -91,6 +91,7 @@ LOCAL_C_INCLUDES := \
         $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/include/audio \
         $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio \
 	    $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/techpack/audio/include \
+        $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/include/uapi \
         $(call include-path-for, audio-effects) \
         vendor/qcom/opensource/audio-hal/primary-hal/hal/audio_extn/
 
@@ -103,7 +104,7 @@ ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/techpack/audio/include
-        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/ $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/include/uapi
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr
 endif
 
@@ -212,6 +213,7 @@ LOCAL_C_INCLUDES := \
         $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/include/audio \
         $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio \
 	    $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/techpack/audio/include \
+        $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/include/uapi \
         external/tinyalsa/include \
         $(call include-path-for, audio-effects) \
         $(call include-path-for, audio-route) \
@@ -227,7 +229,7 @@ endif
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include
         LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/techpack/audio/include
-        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio
+        LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr/audio/include/uapi
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
         LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/kernel/msm-4.14/usr
 endif
